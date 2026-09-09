@@ -17,6 +17,12 @@ body {
 /* HEADER */
 
 .header-principal {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
     padding: 20px 40px;
 
     background-color: #111111;
@@ -30,7 +36,16 @@ body {
 
     color: #39FF14;
 
-    text-align: center;
+    font-size: 28px;
+}
+
+
+.logo p {
+    margin: 5px 0 0;
+
+    color: #D3D3D3;
+
+    font-size: 14px;
 }
 
 
@@ -39,13 +54,11 @@ body {
 .nav-principal ul {
     display: flex;
 
-    justify-content: center;
+    align-items: center;
 
-    flex-wrap: wrap;
+    gap: 18px;
 
-    gap: 20px;
-
-    margin-top: 20px;
+    margin: 0;
 
     padding: 0;
 
@@ -57,11 +70,29 @@ body {
     color: #FFFFFF;
 
     text-decoration: none;
+
+    font-size: 15px;
 }
 
 
 .nav-principal a:hover {
     color: #39FF14;
+}
+
+
+.enlace-carrito {
+    padding: 10px 14px;
+
+    border: 1px solid #39FF14;
+
+    border-radius: 5px;
+}
+
+
+.enlace-carrito:hover {
+    background-color: #39FF14;
+
+    color: #000000;
 }
 
 
@@ -184,4 +215,30 @@ footer {
     color: #D3D3D3;
 
     border-top: 1px solid #333333;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .header-principal {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+
+    .nav-principal ul {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
 }
