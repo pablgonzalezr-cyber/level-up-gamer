@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #000000;
+
+    color: #FFFFFF;
+}
+
+
+/* HEADER */
+
+.header-principal {
+    padding: 20px 40px;
+
+    background-color: #111111;
+
+    border-bottom: 2px solid #1E90FF;
+}
+
+
+.logo h1 {
+    margin: 0;
+
+    color: #39FF14;
+
+    text-align: center;
+}
+
+
+/* NAVEGACIÓN */
+
+.nav-principal ul {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.nav-principal a {
+    color: #FFFFFF;
+
+    text-decoration: none;
+}
+
+
+.nav-principal a:hover {
+    color: #39FF14;
+}
+
+
+/* CONTENIDO PRINCIPAL */
+
+main {
+    min-height: 70vh;
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 100px 30px;
+
+    text-align: center;
+
+    background-color: #080808;
+}
+
+
+.hero h2 {
+    margin-top: 0;
+
+    font-size: 40px;
+
+    color: #1E90FF;
+}
+
+
+.hero p {
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    color: #D3D3D3;
+}
+
+
+.boton-principal {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    background-color: #39FF14;
+
+    color: #000000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+}
+
+
+.boton-principal:hover {
+    background-color: #1E90FF;
+
+    color: #FFFFFF;
+}
+
+
+/* PRODUCTOS */
+
+.seccion-productos {
+    padding: 60px 30px;
+
+    text-align: center;
+}
+
+
+.seccion-productos h2 {
+    color: #39FF14;
+}
+
+
+#productos-destacados {
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    background-color: #111111;
+
+    border: 1px solid #333333;
+
+    border-radius: 8px;
+}
+
+
+/* COMUNIDAD */
+
+.seccion-comunidad {
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background-color: #111111;
+}
+
+
+.seccion-comunidad h2 {
+    color: #1E90FF;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #080808;
+
+    color: #D3D3D3;
+
+    border-top: 1px solid #333333;
+}
