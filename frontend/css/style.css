@@ -18,9 +18,7 @@ body {
 
 .header-principal {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
     padding: 20px 40px;
@@ -53,13 +51,11 @@ body {
 
 .nav-principal ul {
     display: flex;
-
     align-items: center;
 
     gap: 18px;
 
     margin: 0;
-
     padding: 0;
 
     list-style: none;
@@ -93,13 +89,6 @@ body {
     background-color: #39FF14;
 
     color: #000000;
-}
-
-
-/* CONTENIDO PRINCIPAL */
-
-main {
-    min-height: 70vh;
 }
 
 
