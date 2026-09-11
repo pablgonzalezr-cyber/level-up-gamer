@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-Up Gamer | Iniciar sesión</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formularios.css">
+</head>
+<body>
+<header class="header-principal">
+    <div class="logo">
+        <h1>LEVEL-UP GAMER</h1>
+        <p>Tu tienda gamer en Chile</p>
+    </div>
+    <nav class="nav-principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+            <li><a href="registro.html">Registrarse</a></li>
+            <li><a class="enlace-carrito" href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="contenido-formulario">
+    <section class="tarjeta-formulario">
+        <h2>Iniciar sesión</h2>
+        <p>Ingresa tus datos para continuar.</p>
+        <form id="form-login">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" autocomplete="email">
+
+            <label for="clave">Contraseña</label>
+            <input type="password" id="clave" autocomplete="current-password">
+
+            <button type="button" onclick="iniciarSesion()">Iniciar sesión</button>
+        </form>
+        <div id="mensajes-login"></div>
+    </section>
+</main>
+
+<footer>
+    <p>Level-Up Gamer | Desarrollo Full Stack II - DSY1104</p>
+</footer>
+
+<script src="js/comun.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
