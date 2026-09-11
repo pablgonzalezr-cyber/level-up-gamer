@@ -1,0 +1,80 @@
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #111111;
+    border-bottom: 2px solid #39FF14;
+}
+
+.admin-header h1 {
+    margin: 0;
+    color: #39FF14;
+}
+
+.admin-header a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.admin-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+.admin-menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-opcion {
+    flex: 1;
+    min-width: 250px;
+    padding: 30px;
+    background-color: #111111;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.admin-opcion:hover {
+    border-color: #39FF14;
+}
+
+.tabla-usuarios {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+    padding: 12px;
+    border: 1px solid #333333;
+    text-align: left;
+}
+
+.tabla-usuarios th {
+    background-color: #1E90FF;
+    color: #FFFFFF;
+}
+
+.boton-admin {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #39FF14;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boton-eliminar {
+    background-color: #b52b2b;
+    color: #FFFFFF;
+}
