@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Level-Up Gamer | Carrito
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header-principal">
+
+    <div class="logo">
+
+        <h1>LEVEL-UP GAMER</h1>
+
+        <p>Tu tienda gamer en Chile</p>
+
+    </div>
+
+
+    <nav class="nav-principal">
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="productos.html">
+                    Productos
+                </a>
+            </li>
+
+            <li>
+                <a href="nosotros.html">
+                    Nosotros
+                </a>
+            </li>
+
+            <li>
+                <a href="blog.html">
+                    Blog
+                </a>
+            </li>
+
+            <li>
+                <a href="contacto.html">
+                    Contacto
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    Iniciar sesión
+                </a>
+            </li>
+
+            <li>
+                <a href="registro.html">
+                    Registrarse
+                </a>
+            </li>
+
+            <li>
+
+                <a
+                    class="enlace-carrito"
+                    href="carrito.html">
+
+                    Carrito
+                    (<span id="contador-carrito">0</span>)
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main class="contenido-carrito">
+
+
+    <section class="encabezado-carrito">
+
+        <h2>Mi carrito de compras</h2>
+
+        <p>
+            Revisa los productos seleccionados
+            antes de continuar.
+        </p>
+
+    </section>
+
+
+    <section class="estructura-carrito">
+
+
+        <div class="productos-carrito">
+
+
+            <div id="lista-carrito"></div>
+
+
+            <div class="acciones-carrito">
+
+                <a
+                    class="boton-seguir-comprando"
+                    href="productos.html">
+
+                    Seguir comprando
+
+                </a>
+
+
+                <button
+                    class="boton-vaciar"
+                    onclick="vaciarCarrito()">
+
+                    Vaciar carrito
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <aside
+            id="resumen-carrito"
+            class="resumen-carrito">
+
+        </aside>
+
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        Level-Up Gamer |
+        Desarrollo Full Stack II - DSY1104
+    </p>
+
+</footer>
+
+
+<script src="js/comun.js"></script>
+
+<script src="js/productos.js"></script>
+
+<script src="js/carrito.js"></script>
+
+
+</body>
+
+</html>
