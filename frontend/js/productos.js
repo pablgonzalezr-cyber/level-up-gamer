@@ -1,10 +1,12 @@
-const productos = [
+const productosIniciales = [
 
     {
         codigo: "JM001",
         nombre: "Catan",
         categoria: "Juegos de Mesa",
         precio: 29990,
+        stock: 10,
+        stockCritico: 2,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Catan",
         descripcion: "Juego de estrategia donde los jugadores compiten por colonizar y expandirse en la isla de Catan."
     },
@@ -14,6 +16,8 @@ const productos = [
         nombre: "Carcassonne",
         categoria: "Juegos de Mesa",
         precio: 24990,
+        stock: 8,
+        stockCritico: 2,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Carcassonne",
         descripcion: "Juego de colocación de fichas donde los jugadores construyen un paisaje medieval."
     },
@@ -23,6 +27,8 @@ const productos = [
         nombre: "Controlador Inalámbrico Xbox Series X",
         categoria: "Accesorios",
         precio: 59990,
+        stock: 12,
+        stockCritico: 3,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Control+Xbox",
         descripcion: "Control inalámbrico compatible con consolas Xbox y PC."
     },
@@ -32,6 +38,8 @@ const productos = [
         nombre: "Auriculares Gamer HyperX Cloud II",
         categoria: "Accesorios",
         precio: 79990,
+        stock: 7,
+        stockCritico: 2,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=HyperX+Cloud+II",
         descripcion: "Auriculares gamer con sonido envolvente, micrófono desmontable y gran comodidad."
     },
@@ -41,6 +49,8 @@ const productos = [
         nombre: "PlayStation 5",
         categoria: "Consolas",
         precio: 549990,
+        stock: 5,
+        stockCritico: 2,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=PlayStation+5",
         descripcion: "Consola de última generación de Sony con alto rendimiento y rápidos tiempos de carga."
     },
@@ -50,6 +60,8 @@ const productos = [
         nombre: "PC Gamer ASUS ROG Strix",
         categoria: "Computadores Gamers",
         precio: 1299990,
+        stock: 4,
+        stockCritico: 1,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=ASUS+ROG+Strix",
         descripcion: "Computador gamer diseñado para ofrecer alto rendimiento en juegos exigentes."
     },
@@ -59,6 +71,8 @@ const productos = [
         nombre: "Silla Gamer Secretlab Titan",
         categoria: "Sillas Gamers",
         precio: 349990,
+        stock: 6,
+        stockCritico: 2,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Secretlab+Titan",
         descripcion: "Silla gamer ergonómica diseñada para entregar comodidad durante largas sesiones."
     },
@@ -68,6 +82,8 @@ const productos = [
         nombre: "Mouse Gamer Logitech G502 HERO",
         categoria: "Mouse",
         precio: 49990,
+        stock: 15,
+        stockCritico: 3,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Logitech+G502",
         descripcion: "Mouse gamer con sensor de alta precisión y botones personalizables."
     },
@@ -77,6 +93,8 @@ const productos = [
         nombre: "Mousepad Razer Goliathus Extended Chroma",
         categoria: "Mousepad",
         precio: 29990,
+        stock: 10,
+        stockCritico: 2,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Razer+Mousepad",
         descripcion: "Mousepad extendido con gran superficie e iluminación RGB."
     },
@@ -86,6 +104,8 @@ const productos = [
         nombre: "Polera Gamer Personalizada Level-Up",
         categoria: "Poleras Personalizadas",
         precio: 14990,
+        stock: 20,
+        stockCritico: 5,
         imagen: "https://placehold.co/300x200/111111/39FF14?text=Polera+Level-Up",
         descripcion: "Polera gamer personalizable con gamer tag o diseño favorito."
     }
@@ -93,94 +113,190 @@ const productos = [
 ];
 
 
+let productos = [];
+
+
+const productosGuardados =
+    localStorage.getItem("productos");
+
+
+if (productosGuardados) {
+
+    productos =
+        JSON.parse(productosGuardados);
+
+} else {
+
+    productos = productosIniciales;
+
+    localStorage.setItem(
+        "productos",
+        JSON.stringify(productos)
+    );
+
+}
+
+
+
 function mostrarProductos() {
 
-    const contenedor = document.getElementById("lista-productos");
+    const contenedor =
+        document.getElementById("lista-productos");
+
 
     if (contenedor) {
 
         let html = "";
 
+
         for (let producto of productos) {
 
             html += `
+
                 <article class="tarjeta-producto">
 
-                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}">
 
-                    <h3>${producto.nombre}</h3>
+
+                    <h3>
+                        ${producto.nombre}
+                    </h3>
+
 
                     <p class="categoria-producto">
                         ${producto.categoria}
                     </p>
 
+
                     <p class="precio-producto">
+
                         $${producto.precio.toLocaleString("es-CL")}
+
                     </p>
+
 
                     <div class="acciones-producto">
 
-                        <button onclick="verDetalle('${producto.codigo}')">
+                        <button
+                            onclick="verDetalle('${producto.codigo}')">
+
                             Ver detalle
+
                         </button>
 
-                        <button onclick="agregarAlCarrito('${producto.codigo}')">
+
+                        <button
+                            onclick="agregarAlCarrito('${producto.codigo}')">
+
                             Añadir
+
                         </button>
 
                     </div>
 
                 </article>
+
             `;
 
         }
 
+
         contenedor.innerHTML = html;
+
     }
 
 }
 
+
+
 function verDetalle(codigo) {
 
-    localStorage.setItem("productoSeleccionado", codigo);
+    localStorage.setItem(
+        "productoSeleccionado",
+        codigo
+    );
 
-    window.location.href = "detalle-producto.html";
+
+    window.location.href =
+        "detalle-producto.html";
 
 }
 
+
+
 function agregarAlCarrito(codigo) {
 
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    let carrito =
+        JSON.parse(localStorage.getItem("carrito")) || [];
 
-    const producto = productos.find(
-        producto => producto.codigo === codigo
-    );
 
-    const productoEnCarrito = carrito.find(
-        item => item.codigo === codigo
-    );
+    const producto =
+        productos.find(
+            producto => producto.codigo === codigo
+        );
+
+
+    if (!producto) {
+
+        alert(
+            "No se encontró el producto."
+        );
+
+        return;
+
+    }
+
+
+    if (producto.stock <= 0) {
+
+        alert(
+            "Este producto no tiene stock disponible."
+        );
+
+        return;
+
+    }
+
+
+    const productoEnCarrito =
+        carrito.find(
+            item => item.codigo === codigo
+        );
 
 
     if (productoEnCarrito) {
 
-        if (productoEnCarrito.cantidad < 5) {
+        if (
+            productoEnCarrito.cantidad < 5 &&
+            productoEnCarrito.cantidad < producto.stock
+        ) {
 
             productoEnCarrito.cantidad++;
 
         } else {
 
-            alert("Solo puede agregar un máximo de 5 unidades por producto.");
+            alert(
+                "No puede agregar más unidades de este producto."
+            );
 
             return;
+
         }
 
     } else {
 
         carrito.push({
+
             codigo: producto.codigo,
+
             nombre: producto.nombre,
+
             precio: producto.precio,
+
             cantidad: 1
+
         });
 
     }
@@ -194,30 +310,60 @@ function agregarAlCarrito(codigo) {
 
     actualizarContadorCarrito();
 
-    alert("Producto añadido al carrito.");
+
+    alert(
+        "Producto añadido al carrito."
+    );
 
 }
 
+
+
 function mostrarDetalleProducto() {
 
-    const contenedor = document.getElementById("detalle-producto");
+    const contenedor =
+        document.getElementById("detalle-producto");
+
 
     if (contenedor) {
 
-        const codigo = localStorage.getItem("productoSeleccionado");
+        const codigo =
+            localStorage.getItem("productoSeleccionado");
 
-        const producto = productos.find(
-            producto => producto.codigo === codigo
-        );
+
+        const producto =
+            productos.find(
+                producto => producto.codigo === codigo
+            );
 
 
         if (producto) {
+
+            let mensajeStock = "";
+
+
+            if (producto.stock <= 0) {
+
+                mensajeStock =
+                    '<p class="sin-stock">Producto sin stock</p>';
+
+            } else {
+
+                mensajeStock =
+                    '<p>Stock disponible: ' +
+                    producto.stock +
+                    '</p>';
+
+            }
+
 
             contenedor.innerHTML = `
 
                 <div class="detalle-imagen">
 
-                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <img
+                        src="${producto.imagen}"
+                        alt="${producto.nombre}">
 
                 </div>
 
@@ -225,18 +371,31 @@ function mostrarDetalleProducto() {
                 <div class="detalle-informacion">
 
                     <p class="categoria-producto">
+
                         ${producto.categoria}
+
                     </p>
 
-                    <h2>${producto.nombre}</h2>
+
+                    <h2>
+                        ${producto.nombre}
+                    </h2>
+
 
                     <p>
                         ${producto.descripcion}
                     </p>
 
+
+                    ${mensajeStock}
+
+
                     <p class="precio-producto precio-detalle">
+
                         $${producto.precio.toLocaleString("es-CL")}
+
                     </p>
+
 
                     <button
                         class="boton-principal"
@@ -253,6 +412,7 @@ function mostrarDetalleProducto() {
         } else {
 
             contenedor.innerHTML =
+
                 "<p>No se encontró el producto seleccionado.</p>";
 
         }
@@ -261,8 +421,7 @@ function mostrarDetalleProducto() {
 
 }
 
+
 mostrarProductos();
 
 mostrarDetalleProducto();
-
-

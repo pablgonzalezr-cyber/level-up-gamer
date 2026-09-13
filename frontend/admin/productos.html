@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Level-Up Gamer | Administrar Productos
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css">
+
+</head>
+
+
+<body>
+
+
+<header class="admin-header">
+
+    <h1>
+        LEVEL-UP GAMER ADMIN
+    </h1>
+
+
+    <a href="index.html">
+
+        Inicio administrador
+
+    </a>
+
+</header>
+
+
+<main class="admin-contenido">
+
+
+    <h2>
+        Gestión de productos
+    </h2>
+
+
+    <p>
+        Administre los productos disponibles
+        en la tienda.
+    </p>
+
+
+    <button
+        class="boton-admin"
+        onclick="nuevoProducto()">
+
+        Nuevo producto
+
+    </button>
+
+
+    <div class="contenedor-tabla">
+
+
+        <table class="tabla-productos">
+
+            <thead>
+
+                <tr>
+
+                    <th>Código</th>
+
+                    <th>Nombre</th>
+
+                    <th>Categoría</th>
+
+                    <th>Precio</th>
+
+                    <th>Stock</th>
+
+                    <th>Stock crítico</th>
+
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="cuerpo-productos">
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+
+</main>
+
+
+<script src="../js/productos.js"></script>
+
+<script src="../js/admin-productos.js"></script>
+
+
+</body>
+
+</html>

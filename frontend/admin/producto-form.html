@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        Level-Up Gamer | Producto
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+
+    <link
+        rel="stylesheet"
+        href="../css/formularios.css">
+
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css">
+
+</head>
+
+
+<body>
+
+
+<header class="admin-header">
+
+
+    <h1>
+        LEVEL-UP GAMER ADMIN
+    </h1>
+
+
+    <a href="productos.html">
+
+        Volver a productos
+
+    </a>
+
+
+</header>
+
+
+<main class="contenido-formulario">
+
+
+    <section class="tarjeta-formulario">
+
+
+        <h2>
+            Producto
+        </h2>
+
+
+        <form id="form-producto">
+
+
+            <label for="codigo">
+
+                Código
+
+            </label>
+
+
+            <input
+                type="text"
+                id="codigo"
+                placeholder="Ej: MS002">
+
+
+            <label for="nombre">
+
+                Nombre
+
+            </label>
+
+
+            <input
+                type="text"
+                id="nombre">
+
+
+            <label for="descripcion">
+
+                Descripción
+
+            </label>
+
+
+            <textarea
+                id="descripcion"
+                maxlength="500">
+            </textarea>
+
+
+            <label for="precio">
+
+                Precio
+
+            </label>
+
+
+            <input
+                type="number"
+                id="precio"
+                min="0"
+                step="0.01">
+
+
+            <label for="stock">
+
+                Stock
+
+            </label>
+
+
+            <input
+                type="number"
+                id="stock"
+                min="0">
+
+
+            <label for="stockCritico">
+
+                Stock crítico
+
+            </label>
+
+
+            <input
+                type="number"
+                id="stockCritico"
+                min="0">
+
+
+            <label for="categoria">
+
+                Categoría
+
+            </label>
+
+
+            <select id="categoria">
+
+
+                <option value="">
+
+                    Seleccione una categoría
+
+                </option>
+
+
+                <option value="Juegos de Mesa">
+
+                    Juegos de Mesa
+
+                </option>
+
+
+                <option value="Accesorios">
+
+                    Accesorios
+
+                </option>
+
+
+                <option value="Consolas">
+
+                    Consolas
+
+                </option>
+
+
+                <option value="Computadores Gamers">
+
+                    Computadores Gamers
+
+                </option>
+
+
+                <option value="Sillas Gamers">
+
+                    Sillas Gamers
+
+                </option>
+
+
+                <option value="Mouse">
+
+                    Mouse
+
+                </option>
+
+
+                <option value="Mousepad">
+
+                    Mousepad
+
+                </option>
+
+
+                <option value="Poleras Personalizadas">
+
+                    Poleras Personalizadas
+
+                </option>
+
+
+                <option value="Polerones Gamers Personalizados">
+
+                    Polerones Gamers Personalizados
+
+                </option>
+
+
+            </select>
+
+
+            <label for="imagen">
+
+                URL de imagen (opcional)
+
+            </label>
+
+
+            <input
+                type="text"
+                id="imagen"
+                placeholder="https://...">
+
+
+            <button
+                type="button"
+                onclick="guardarProducto()">
+
+                Guardar producto
+
+            </button>
+
+
+        </form>
+
+
+        <div id="mensajes-producto-admin">
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<script src="../js/productos.js"></script>
+
+<script src="../js/validaciones.js"></script>
+
+<script src="../js/admin-producto-form.js"></script>
+
+
+</body>
+
+</html>

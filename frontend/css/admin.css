@@ -78,3 +78,58 @@
     background-color: #b52b2b;
     color: #FFFFFF;
 }
+
+/* ADMINISTRACIÓN DE PRODUCTOS */
+
+.contenedor-tabla {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+.tabla-productos {
+    width: 100%;
+
+    margin-top: 25px;
+
+    border-collapse: collapse;
+}
+
+
+.tabla-productos th,
+.tabla-productos td {
+    padding: 12px;
+
+    border: 1px solid #333333;
+
+    text-align: left;
+}
+
+
+.tabla-productos th {
+    background-color: #1E90FF;
+
+    color: #FFFFFF;
+}
+
+
+.tabla-productos td {
+    background-color: #111111;
+
+    color: #D3D3D3;
+}
+
+
+.stock-critico {
+    color: #ff5252;
+
+    font-weight: bold;
+}
+
+
+.sin-stock {
+    color: #ff5252;
+
+    font-weight: bold;
+}
