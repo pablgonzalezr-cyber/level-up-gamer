@@ -48,6 +48,29 @@
             <label for="fechaNacimiento">Fecha de nacimiento</label>
             <input type="date" id="fechaNacimiento">
 
+            <label for="region">
+                Región
+            </label>
+
+            <select
+                id="region"
+                onchange="cargarComunas()">
+
+            </select>
+
+
+            <label for="comuna">
+                Comuna
+            </label>
+
+            <select id="comuna">
+
+                <option value="">
+                    Seleccione una comuna
+                </option>
+
+            </select>
+
             <label for="direccion">Dirección</label>
             <input type="text" id="direccion" autocomplete="street-address">
 
@@ -69,7 +92,11 @@
 </footer>
 
 <script src="js/comun.js"></script>
+
 <script src="js/validaciones.js"></script>
+
+<script src="js/regiones-comunas.js"></script>
+
 <script src="js/registro.js"></script>
 </body>
 </html>

@@ -1,42 +1,99 @@
 function validarCorreoPermitido(correo) {
 
-    const correoLimpio = correo.trim().toLowerCase();
+    const correoLimpio =
+        correo.trim().toLowerCase();
+
+
+    const formatoCorreo =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (!formatoCorreo.test(correoLimpio)) {
+
+        return false;
+
+    }
+
 
     return correoLimpio.endsWith("@duoc.cl") ||
            correoLimpio.endsWith("@profesor.duoc.cl") ||
            correoLimpio.endsWith("@gmail.com");
+
 }
+
 
 
 function validarRun(run) {
 
-    let runLimpio = run.trim().toUpperCase();
+    const runLimpio =
+        run.trim().toUpperCase();
 
-    if (!/^[0-9]{7,8}[0-9K]$/.test(runLimpio)) {
+
+    if (
+        runLimpio.length < 7 ||
+        runLimpio.length > 9
+    ) {
+
         return false;
+
     }
 
-    const cuerpo = runLimpio.slice(0, -1);
-    const digitoIngresado = runLimpio.slice(-1);
+
+    if (
+        !/^[0-9]{6,8}[0-9K]$/.test(runLimpio)
+    ) {
+
+        return false;
+
+    }
+
+
+    const cuerpo =
+        runLimpio.slice(0, -1);
+
+
+    const digitoIngresado =
+        runLimpio.slice(-1);
+
 
     let suma = 0;
+
     let multiplicador = 2;
 
-    for (let i = cuerpo.length - 1; i >= 0; i--) {
 
-        suma = suma + Number(cuerpo[i]) * multiplicador;
+    for (
+        let i = cuerpo.length - 1;
+        i >= 0;
+        i--
+    ) {
+
+        suma =
+            suma +
+            Number(cuerpo[i]) * multiplicador;
+
 
         multiplicador++;
 
+
         if (multiplicador > 7) {
+
             multiplicador = 2;
+
         }
+
     }
 
-    const resto = suma % 11;
-    const resultado = 11 - resto;
+
+    const resto =
+        suma % 11;
+
+
+    const resultado =
+        11 - resto;
+
 
     let digitoCalculado = "";
+
 
     if (resultado === 11) {
 
@@ -48,11 +105,14 @@ function validarRun(run) {
 
     } else {
 
-        digitoCalculado = String(resultado);
+        digitoCalculado =
+            String(resultado);
 
     }
 
+
     return digitoCalculado === digitoIngresado;
+
 }
 
 

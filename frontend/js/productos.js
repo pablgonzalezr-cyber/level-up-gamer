@@ -172,7 +172,7 @@ function mostrarProductos() {
 
                     <p class="precio-producto">
 
-                        $${producto.precio.toLocaleString("es-CL")}
+                        ${formatearPrecio(producto.precio)}
 
                     </p>
 
@@ -392,7 +392,7 @@ function mostrarDetalleProducto() {
 
                     <p class="precio-producto precio-detalle">
 
-                        $${producto.precio.toLocaleString("es-CL")}
+                        ${formatearPrecio(producto.precio)}
 
                     </p>
 
@@ -479,7 +479,7 @@ function mostrarProductosDestacados() {
 
                 <p class="precio-producto">
 
-                    $${producto.precio.toLocaleString("es-CL")}
+                   ${formatearPrecio(producto.precio)}
 
                 </p>
 
@@ -515,6 +515,19 @@ function mostrarProductosDestacados() {
 
 }
 
+function formatearPrecio(precio) {
+
+    if (precio === 0) {
+
+        return "FREE";
+
+    }
+
+
+    return "$" +
+        precio.toLocaleString("es-CL");
+
+}
 
 mostrarProductos();
 

@@ -5,6 +5,8 @@ function registrarUsuario() {
     const apellidos = document.getElementById("apellidos").value.trim();
     const correo = document.getElementById("correo").value.trim();
     const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+    const region = document.getElementById("region").value
+    const comuna = document.getElementById("comuna").value;
     const direccion = document.getElementById("direccion").value.trim();
     const clave = document.getElementById("clave").value;
     const confirmarClave = document.getElementById("confirmarClave").value;
@@ -45,6 +47,17 @@ function registrarUsuario() {
         errores.push("Debe ser mayor de 18 años para registrarse.");
     }
 
+    if (
+        region !== "" &&
+        comuna === ""
+    ) {
+
+        errores.push(
+            "Debe seleccionar una comuna para la región elegida."
+        );
+
+    }
+
     if (direccion === "") {
         errores.push("La dirección es obligatoria.");
     } else if (direccion.length > 300) {
@@ -64,12 +77,30 @@ function registrarUsuario() {
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     for (let usuario of usuarios) {
-        if (usuario.run === run) {
-            errores.push("Ya existe un usuario registrado con ese RUN.");
+
+        if (
+            usuario.run.toUpperCase() ===
+            run.toUpperCase()
+        ) {
+
+            errores.push(
+                "Ya existe un usuario registrado con ese RUN."
+            );
+
         }
-        if (usuario.correo === correo) {
-            errores.push("Ya existe un usuario registrado con ese correo.");
+
+
+        if (
+            usuario.correo.toLowerCase() ===
+            correo.toLowerCase()
+        ) {
+
+            errores.push(
+                "Ya existe un usuario registrado con ese correo."
+            );
+
         }
+
     }
 
     if (errores.length > 0) {
@@ -85,8 +116,8 @@ function registrarUsuario() {
         fechaNacimiento: fechaNacimiento,
         direccion: direccion,
         tipoUsuario: "Cliente",
-        region: "",
-        comuna: ""
+        region: region,
+        comuna: comuna
     };
 
     usuarios.push(nuevoUsuario);
@@ -97,3 +128,5 @@ function registrarUsuario() {
 
     document.getElementById("form-registro").reset();
 }
+
+cargarRegiones();

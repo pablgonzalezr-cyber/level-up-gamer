@@ -186,25 +186,66 @@ function mostrarCarrito() {
 
 function aumentarCantidad(codigo) {
 
-    const carrito = obtenerCarrito();
+    const carrito =
+        obtenerCarrito();
+
+
+    let productoCompleto = null;
+
+
+    for (let producto of productos) {
+
+        if (producto.codigo === codigo) {
+
+            productoCompleto =
+                producto;
+
+        }
+
+    }
+
+
+    if (!productoCompleto) {
+
+        alert(
+            "No se encontró la información del producto."
+        );
+
+        return;
+
+    }
 
 
     for (let item of carrito) {
 
         if (item.codigo === codigo) {
 
-            if (item.cantidad < 5) {
 
-                item.cantidad++;
+            if (
+                item.cantidad >= productoCompleto.stock
+            ) {
 
-            } else {
+                alert(
+                    "No hay más unidades disponibles en stock."
+                );
+
+                return;
+
+            }
+
+
+            if (item.cantidad >= 5) {
 
                 alert(
                     "Solo puede agregar un máximo de 5 unidades por producto."
                 );
 
                 return;
+
             }
+
+
+            item.cantidad++;
 
         }
 

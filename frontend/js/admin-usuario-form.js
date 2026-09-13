@@ -30,9 +30,23 @@ function guardarUsuarioAdmin() {
     }
 
     if (correo === "") {
-        errores.push("El correo es obligatorio.");
+
+        errores.push(
+            "El correo es obligatorio."
+        );
+
+    } else if (correo.length > 100) {
+
+        errores.push(
+            "El correo no puede superar los 100 caracteres."
+        );
+
     } else if (!validarCorreoPermitido(correo)) {
-        errores.push("El dominio del correo no está permitido.");
+
+        errores.push(
+            "El correo ingresado no es válido o su dominio no está permitido."
+        );
+
     }
 
     if (tipoUsuario === "") {
