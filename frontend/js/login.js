@@ -25,6 +25,8 @@ function iniciarSesion() {
 
     localStorage.setItem("usuario", correo);
 
+    actualizarUsuarioNavegacion();
+
     mostrarExito("mensajes-login", "Inicio de sesión simulado correctamente.");
 
     document.getElementById("form-login").reset();

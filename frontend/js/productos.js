@@ -421,7 +421,103 @@ function mostrarDetalleProducto() {
 
 }
 
+function mostrarProductosDestacados() {
+
+    const contenedor =
+        document.getElementById("productos-destacados");
+
+
+    if (!contenedor) {
+
+        return;
+
+    }
+
+
+    let html = "";
+
+
+    let cantidadMostrar = 4;
+
+
+    if (productos.length < 4) {
+
+        cantidadMostrar =
+            productos.length;
+
+    }
+
+
+    for (let i = 0; i < cantidadMostrar; i++) {
+
+        const producto =
+            productos[i];
+
+
+        html += `
+
+            <article class="tarjeta-producto">
+
+                <img
+                    src="${producto.imagen}"
+                    alt="${producto.nombre}">
+
+
+                <p class="categoria-producto">
+
+                    ${producto.categoria}
+
+                </p>
+
+
+                <h3>
+
+                    ${producto.nombre}
+
+                </h3>
+
+
+                <p class="precio-producto">
+
+                    $${producto.precio.toLocaleString("es-CL")}
+
+                </p>
+
+
+                <div class="acciones-producto">
+
+                    <button
+                        onclick="verDetalle('${producto.codigo}')">
+
+                        Ver detalle
+
+                    </button>
+
+
+                    <button
+                        onclick="agregarAlCarrito('${producto.codigo}')">
+
+                        Añadir
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        `;
+
+    }
+
+
+    contenedor.innerHTML =
+        html;
+
+}
+
 
 mostrarProductos();
 
 mostrarDetalleProducto();
+
+mostrarProductosDestacados();
