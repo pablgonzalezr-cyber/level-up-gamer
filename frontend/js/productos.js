@@ -7,7 +7,7 @@ const productosIniciales = [
         precio: 29990,
         stock: 10,
         stockCritico: 2,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Catan",
+        imagen: "img/productos/catan.jpg",
         descripcion: "Juego de estrategia donde los jugadores compiten por colonizar y expandirse en la isla de Catan."
     },
 
@@ -18,7 +18,7 @@ const productosIniciales = [
         precio: 24990,
         stock: 8,
         stockCritico: 2,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Carcassonne",
+        imagen: "img/productos/carcassonne.jpg",
         descripcion: "Juego de colocación de fichas donde los jugadores construyen un paisaje medieval."
     },
 
@@ -29,7 +29,7 @@ const productosIniciales = [
         precio: 59990,
         stock: 12,
         stockCritico: 3,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Control+Xbox",
+        imagen: "img/productos/control-xbox.jpg",
         descripcion: "Control inalámbrico compatible con consolas Xbox y PC."
     },
 
@@ -40,7 +40,7 @@ const productosIniciales = [
         precio: 79990,
         stock: 7,
         stockCritico: 2,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=HyperX+Cloud+II",
+        imagen: "img/productos/hyperx-cloud-2.jpg",
         descripcion: "Auriculares gamer con sonido envolvente, micrófono desmontable y gran comodidad."
     },
 
@@ -51,7 +51,7 @@ const productosIniciales = [
         precio: 549990,
         stock: 5,
         stockCritico: 2,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=PlayStation+5",
+        imagen: "img/productos/ps5.jpg",
         descripcion: "Consola de última generación de Sony con alto rendimiento y rápidos tiempos de carga."
     },
 
@@ -62,7 +62,7 @@ const productosIniciales = [
         precio: 1299990,
         stock: 4,
         stockCritico: 1,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=ASUS+ROG+Strix",
+        imagen: "img/productos/asus-rog-strix.jpg",
         descripcion: "Computador gamer diseñado para ofrecer alto rendimiento en juegos exigentes."
     },
 
@@ -73,7 +73,7 @@ const productosIniciales = [
         precio: 349990,
         stock: 6,
         stockCritico: 2,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Secretlab+Titan",
+        imagen: "img/productos/secretlab-titan.jpg",
         descripcion: "Silla gamer ergonómica diseñada para entregar comodidad durante largas sesiones."
     },
 
@@ -84,7 +84,7 @@ const productosIniciales = [
         precio: 49990,
         stock: 15,
         stockCritico: 3,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Logitech+G502",
+        imagen: "img/productos/logitech-g502.jpg",
         descripcion: "Mouse gamer con sensor de alta precisión y botones personalizables."
     },
 
@@ -95,7 +95,7 @@ const productosIniciales = [
         precio: 29990,
         stock: 10,
         stockCritico: 2,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Razer+Mousepad",
+        imagen: "img/productos/razer-goliathus.jpg",
         descripcion: "Mousepad extendido con gran superficie e iluminación RGB."
     },
 
@@ -106,7 +106,7 @@ const productosIniciales = [
         precio: 14990,
         stock: 20,
         stockCritico: 5,
-        imagen: "https://placehold.co/300x200/111111/39FF14?text=Polera+Level-Up",
+        imagen: "img/productos/polera-level-up.jpg",
         descripcion: "Polera gamer personalizable con gamer tag o diseño favorito."
     }
 
