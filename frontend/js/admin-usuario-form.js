@@ -114,5 +114,301 @@ function cargarUsuarioEditar() {
     document.getElementById("direccion").value = usuario.direccion;
 }
 
+function configurarValidacionesUsuarioAdmin() {
+
+    const run =
+        document.getElementById("run");
+
+    const nombre =
+        document.getElementById("nombre");
+
+    const apellidos =
+        document.getElementById("apellidos");
+
+    const correo =
+        document.getElementById("correo");
+
+    const tipoUsuario =
+        document.getElementById("tipoUsuario");
+
+    const direccion =
+        document.getElementById("direccion");
+
+
+    /* RUN */
+
+    if (run) {
+
+        run.addEventListener("blur", function () {
+
+            const valor =
+                run.value.trim();
+
+            const mensaje =
+                document.getElementById(
+                    "error-run-admin"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El RUN es obligatorio.";
+
+            } else if (!validarRun(valor)) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El RUN ingresado no es válido.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "RUN válido.";
+
+            }
+
+        });
+
+    }
+
+
+    /* NOMBRE */
+
+    if (nombre) {
+
+        nombre.addEventListener("blur", function () {
+
+            const valor =
+                nombre.value.trim();
+
+            const mensaje =
+                document.getElementById(
+                    "error-nombre-admin"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El nombre es obligatorio.";
+
+            } else if (valor.length > 50) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El nombre no puede superar los 50 caracteres.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Nombre válido.";
+
+            }
+
+        });
+
+    }
+
+
+    /* APELLIDOS */
+
+    if (apellidos) {
+
+        apellidos.addEventListener("blur", function () {
+
+            const valor =
+                apellidos.value.trim();
+
+            const mensaje =
+                document.getElementById(
+                    "error-apellidos-admin"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "Los apellidos son obligatorios.";
+
+            } else if (valor.length > 100) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "Los apellidos no pueden superar los 100 caracteres.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Apellidos válidos.";
+
+            }
+
+        });
+
+    }
+
+
+    /* CORREO */
+
+    if (correo) {
+
+        correo.addEventListener("blur", function () {
+
+            const valor =
+                correo.value.trim();
+
+            const mensaje =
+                document.getElementById(
+                    "error-correo-admin"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El correo es obligatorio.";
+
+            } else if (valor.length > 100) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El correo no puede superar los 100 caracteres.";
+
+            } else if (!validarCorreoPermitido(valor)) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El correo ingresado no es válido o su dominio no está permitido.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Correo válido.";
+
+            }
+
+        });
+
+    }
+
+
+    /* TIPO DE USUARIO */
+
+    if (tipoUsuario) {
+
+        tipoUsuario.addEventListener("change", function () {
+
+            const mensaje =
+                document.getElementById(
+                    "error-tipo-admin"
+                );
+
+
+            if (tipoUsuario.value === "") {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "Debe seleccionar un tipo de usuario.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Tipo de usuario seleccionado.";
+
+            }
+
+        });
+
+    }
+
+
+    /* DIRECCIÓN */
+
+    if (direccion) {
+
+        direccion.addEventListener("blur", function () {
+
+            const valor =
+                direccion.value.trim();
+
+            const mensaje =
+                document.getElementById(
+                    "error-direccion-admin"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "La dirección es obligatoria.";
+
+            } else if (valor.length > 300) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "La dirección no puede superar los 300 caracteres.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Dirección válida.";
+
+            }
+
+        });
+
+    }
+
+}
+
 cargarRegiones();
 cargarUsuarioEditar();
+configurarValidacionesUsuarioAdmin();

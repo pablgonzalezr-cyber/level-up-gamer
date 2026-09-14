@@ -21,14 +21,22 @@
             <label for="run">RUN</label>
             <input type="text" id="run" placeholder="19011022K">
 
+            <div id="error-run-admin"></div>
+
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre">
+
+            <div id="error-nombre-admin"></div>
 
             <label for="apellidos">Apellidos</label>
             <input type="text" id="apellidos">
 
+            <div id="error-apellidos-admin"></div>
+
             <label for="correo">Correo</label>
             <input type="email" id="correo">
+
+            <div id="error-correo-admin"></div>
 
             <label for="fechaNacimiento">Fecha de nacimiento</label>
             <input type="date" id="fechaNacimiento">
@@ -41,6 +49,8 @@
                 <option value="Vendedor">Vendedor</option>
             </select>
 
+            <div id="error-tipo-admin"></div>
+
             <label for="region">Región</label>
             <select id="region" onchange="cargarComunas()"></select>
 
@@ -51,6 +61,8 @@
 
             <label for="direccion">Dirección</label>
             <input type="text" id="direccion">
+
+            <div id="error-direccion-admin"></div>
 
             <button type="button" onclick="guardarUsuarioAdmin()">Guardar usuario</button>
         </form>

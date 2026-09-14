@@ -321,19 +321,27 @@ color: #FFFFFF;
 }
 
 .boton-secundario {
-display: inline-block;
+    display: inline-flex;
 
-padding: 12px 25px;
+    align-items: center;
 
-color: #FFFFFF;
+    justify-content: center;
 
-text-decoration: none;
+    padding: 12px 25px;
 
-border: 1px solid #1E90FF;
+    min-height: 48px;
 
-border-radius: 5px;
+    box-sizing: border-box;
 
+    color: #FFFFFF;
 
+    text-decoration: none;
+
+    border: 1px solid #1E90FF;
+
+    border-radius: 5px;
+
+    text-align: center;
 }
 
 .boton-secundario:hover {
