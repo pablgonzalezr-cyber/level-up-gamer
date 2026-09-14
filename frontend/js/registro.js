@@ -129,4 +129,202 @@ function registrarUsuario() {
     document.getElementById("form-registro").reset();
 }
 
+function configurarValidacionesRegistro() {
+
+    const run =
+        document.getElementById("run");
+
+    const correo =
+        document.getElementById("correo");
+
+    const clave =
+        document.getElementById("clave");
+
+    const confirmarClave =
+        document.getElementById("confirmarClave");
+
+
+    if (run) {
+
+        run.addEventListener("blur", function () {
+
+            const valor =
+                run.value.trim();
+
+            const mensaje =
+                document.getElementById("error-run");
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (!validarRun(valor)) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El RUN ingresado no es válido.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "RUN válido.";
+
+            }
+
+        });
+
+    }
+
+
+    if (correo) {
+
+        correo.addEventListener("blur", function () {
+
+            const valor =
+                correo.value.trim();
+
+            const mensaje =
+                document.getElementById("error-correo");
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (!validarCorreoPermitido(valor)) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El correo no tiene un formato válido o su dominio no está permitido.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Correo válido.";
+
+            }
+
+        });
+
+    }
+
+
+    if (clave) {
+
+        clave.addEventListener("blur", function () {
+
+            const valor =
+                clave.value;
+
+            const mensaje =
+                document.getElementById("error-clave");
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (
+                valor.length < 4 ||
+                valor.length > 10
+            ) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "La contraseña debe tener entre 4 y 10 caracteres.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Longitud de contraseña válida.";
+
+            }
+
+        });
+
+    }
+
+
+    if (confirmarClave) {
+
+        confirmarClave.addEventListener("blur", function () {
+
+            const claveValor =
+                clave.value;
+
+            const confirmarValor =
+                confirmarClave.value;
+
+            const mensaje =
+                document.getElementById("error-confirmar-clave");
+
+
+            if (confirmarValor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (claveValor !== confirmarValor) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "Las contraseñas no coinciden.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Las contraseñas coinciden.";
+
+            }
+
+        });
+
+    }
+
+}
+
+
+configurarValidacionesRegistro();
+
+
 cargarRegiones();

@@ -34,13 +34,33 @@
         <p>Envíanos tus consultas o comentarios.</p>
         <form id="form-contacto">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" autocomplete="name">
+            <input
+                type="text"
+                id="nombre"
+                autocomplete="name">
+
+            <div id="error-nombre-contacto"></div>
+
 
             <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" autocomplete="email">
+
+            <input
+                type="email"
+                id="correo"
+                autocomplete="email">
+
+            <div id="error-correo-contacto"></div>
+
 
             <label for="comentario">Comentario</label>
-            <textarea id="comentario" maxlength="500"></textarea>
+
+            <textarea
+                id="comentario"
+                maxlength="500">
+            </textarea>
+
+            <div id="error-comentario-contacto"></div>
+
 
             <button type="button" onclick="enviarContacto()">Enviar mensaje</button>
         </form>

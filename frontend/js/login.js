@@ -31,3 +31,105 @@ function iniciarSesion() {
 
     document.getElementById("form-login").reset();
 }
+
+function configurarValidacionesLogin() {
+
+    const correo =
+        document.getElementById("correo");
+
+    const clave =
+        document.getElementById("clave");
+
+
+    if (correo) {
+
+        correo.addEventListener("blur", function () {
+
+            const valor =
+                correo.value.trim();
+
+            const mensaje =
+                document.getElementById("error-correo-login");
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (!validarCorreoPermitido(valor)) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El correo no tiene un formato válido o su dominio no está permitido.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Correo válido.";
+
+            }
+
+        });
+
+    }
+
+
+    if (clave) {
+
+        clave.addEventListener("blur", function () {
+
+            const valor =
+                clave.value;
+
+            const mensaje =
+                document.getElementById("error-clave-login");
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (
+                valor.length < 4 ||
+                valor.length > 10
+            ) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "La contraseña debe tener entre 4 y 10 caracteres.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Longitud de contraseña válida.";
+
+            }
+
+        });
+
+    }
+
+}
+
+
+configurarValidacionesLogin();

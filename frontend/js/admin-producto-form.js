@@ -375,3 +375,230 @@ function cargarProductoEditar() {
 
 
 cargarProductoEditar();
+
+function configurarValidacionesProducto() {
+
+    const codigo =
+        document.getElementById("codigo");
+
+    const precio =
+        document.getElementById("precio");
+
+    const stock =
+        document.getElementById("stock");
+
+    const stockCritico =
+        document.getElementById("stockCritico");
+
+
+    /* CÓDIGO */
+
+    if (codigo) {
+
+        codigo.addEventListener("blur", function () {
+
+            const valor =
+                codigo.value.trim();
+
+            const mensaje =
+                document.getElementById(
+                    "error-codigo-producto"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (valor.length < 3) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El código debe tener al menos 3 caracteres.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Código válido.";
+
+            }
+
+        });
+
+    }
+
+
+    /* PRECIO */
+
+    if (precio) {
+
+        precio.addEventListener("blur", function () {
+
+            const valor =
+                precio.value;
+
+            const numero =
+                Number(valor);
+
+            const mensaje =
+                document.getElementById(
+                    "error-precio-producto"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (
+                isNaN(numero) ||
+                numero < 0
+            ) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El precio debe ser un número mayor o igual a 0.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Precio válido.";
+
+            }
+
+        });
+
+    }
+
+
+    /* STOCK */
+
+    if (stock) {
+
+        stock.addEventListener("blur", function () {
+
+            const valor =
+                stock.value;
+
+            const numero =
+                Number(valor);
+
+            const mensaje =
+                document.getElementById(
+                    "error-stock-producto"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (
+                isNaN(numero) ||
+                numero < 0 ||
+                numero % 1 !== 0
+            ) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El stock debe ser un número entero mayor o igual a 0.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Stock válido.";
+
+            }
+
+        });
+
+    }
+
+
+    /* STOCK CRÍTICO */
+
+    if (stockCritico) {
+
+        stockCritico.addEventListener("blur", function () {
+
+            const valor =
+                stockCritico.value;
+
+            const numero =
+                Number(valor);
+
+            const mensaje =
+                document.getElementById(
+                    "error-stock-critico-producto"
+                );
+
+
+            if (valor === "") {
+
+                mensaje.innerHTML = "";
+
+                return;
+
+            }
+
+
+            if (
+                isNaN(numero) ||
+                numero < 0 ||
+                numero % 1 !== 0
+            ) {
+
+                mensaje.className =
+                    "mensaje-error-dinamico";
+
+                mensaje.textContent =
+                    "El stock crítico debe ser un número entero mayor o igual a 0.";
+
+            } else {
+
+                mensaje.className =
+                    "mensaje-exito-dinamico";
+
+                mensaje.textContent =
+                    "Stock crítico válido.";
+
+            }
+
+        });
+
+    }
+
+}
+
+
+configurarValidacionesProducto();

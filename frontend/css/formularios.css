@@ -82,3 +82,22 @@
     border-left: 4px solid #39FF14;
     color: #FFFFFF;
 }
+
+.mensaje-error-dinamico {
+    margin-top: 5px;
+    padding: 8px 10px;
+    background-color: #3b0d0d;
+    border-left: 3px solid #ff4444;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+.mensaje-exito-dinamico {
+    margin-top: 5px;
+    padding: 8px 10px;
+    background-color: #0c3510;
+    border-left: 3px solid #39FF14;
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
